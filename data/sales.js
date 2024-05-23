@@ -25,4 +25,22 @@ async function getSalebyId(id) {
   return sale;
 }
 
-export { getAllSales, getSalebyId };
+async function getSalesByLocation(location, pageSize, page) {
+  //console.log(">>" + id);
+  const connectiondb = await getConnection();
+  const sales = await connectiondb
+    .db(DATABASE)
+    .collection(SALES)
+    .find({ "storeLocation" : location })
+    .limit(pageSize)
+    .skip(pageSize * page)
+    .toArray();
+
+  return sales;
+}
+
+export { getAllSales, getSalebyId, getSalesByLocation };
+
+
+
+
