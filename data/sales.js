@@ -21,7 +21,7 @@ async function getSalebyId(id) {
   const sale = await connectiondb
     .db(DATABASE)
     .collection(SALES)
-    .findOne({ _id : new ObjectId(id)});
+    .findOne({ _id: new ObjectId(id) });
   return sale;
 }
 
@@ -31,7 +31,7 @@ async function getSalesByLocation(location, pageSize, page) {
   const sales = await connectiondb
     .db(DATABASE)
     .collection(SALES)
-    .find({ "storeLocation" : location })
+    .find({ storeLocation: location })
     .limit(pageSize)
     .skip(pageSize * page)
     .toArray();
@@ -39,8 +39,33 @@ async function getSalesByLocation(location, pageSize, page) {
   return sales;
 }
 
-export { getAllSales, getSalebyId, getSalesByLocation };
+async function getSalesfiltered(cupon, method, location, pageSize, page) {
+  const connectiondb = await getConnection();
+  const query = {};
 
+  if (location) {
+    query.storeLocation = location;
+  }
+  if (method) {
+    query.purchaseMethod = method;
+  }
+  if (cupon) {
+    if ((cupon === "true")) {
+      query.couponUsed = true;
+    } else {
+      query.couponUsed = false;
+    }
+    //console.log(query.couponUsed);
+  }
 
+  const sales = await connectiondb
+    .db(DATABASE)
+    .collection(SALES)
+    .find(query)
+    .limit(pageSize)
+    .skip(pageSize * page)
+    .toArray();
+  return sales;
+}
 
-
+export { getAllSales, getSalebyId, getSalesByLocation, getSalesfiltered };
