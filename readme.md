@@ -42,4 +42,10 @@ Si ya terminaste o son las 10:00 asegurate de seguir los siguientes pasos para l
 
 ## Listado de endpoint
 
--GET /api/sales?pageSize=[pageSize]&page=[page]
+1. -URL PAGED '/api/sales?pageSize=[pageSize]&page=[page]'
+2. -GET ALL SALES '/api/sales/'
+3. -GET SALE BY ID 'api/sales/:id'
+4. -GET SALE BY LOCATION api/sales/location/:location
+5. -GET SALE BY FILTERED LOCATION, PURCHASE METHOD, COUPON '/api/sales/data?storeLocation=[location]&purchaseMethod=[purchaseMethod]&couponUsed=[couponUsed]'
+6. -GET TOP TEN SALES '/api/sales/top'
+7. -GET ORDERED CLIENT SATISFACTION '/api/sales/satisfaction'
