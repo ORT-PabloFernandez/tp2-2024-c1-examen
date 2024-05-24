@@ -56,3 +56,6 @@ http://localhost:3000/api/sales/filterSale/London/Online
 
 ## Sales más Vendidas
 http://localhost:3000/api/sales/masVendidos
+
+## Customers por Satisfacción
+http://localhost:3000/api/sales/customer

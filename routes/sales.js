@@ -1,5 +1,5 @@
 import express from "express";
-import { getAllSales, getSaleById, getSaleByLocation, getFilterSale, masVendidos } from "../data/sales.js";
+import { getAllSales, getSaleById, getSaleByLocation, getFilterSale, masVendidos, customer } from "../data/sales.js";
 
 const router = express.Router();
 
@@ -35,6 +35,11 @@ router.get("/masVendidos" , async (req, res) => {
   
   res.json(vendidos);
 
+})
+
+router.get("/customer" , async (req, res) => {
+const customers = await customer();
+res.json(customers)
 })
 
 

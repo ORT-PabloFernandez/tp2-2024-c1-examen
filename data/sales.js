@@ -45,7 +45,7 @@ async function getFilterSale(sLocation, purchaseMethod, pageSize, page) {
     .db(DATABASE)
     .collection(SALES)
     .find({ storeLocation: sLocation } || { purchaseMethod: purchaseMethod })
-    .project({ _id: 0 , storeLocation:1 , purchaseMethod:1 , couponUsed: 1 })
+    .project({ _id: 0, storeLocation: 1, purchaseMethod: 1, couponUsed: 1 })
     .limit(pageSize)
     .skip(pageSize * page)
     .toArray();
@@ -73,10 +73,30 @@ async function masVendidos(pageSize = 10) {
   return sales;
 }
 
+async function customer() {
+  const connectiondb = await getConnection();
+  const customers = await connectiondb
+    .db(DATABASE)
+    .collection(SALES)
+    .find({})
+    .sort({ "customer.satisfaction": 1 })
+    .project({
+      _id: 0,
+      "customer.gender": 1,
+      "customer.age": 1,
+      "customer.email": 1,
+      "customer.satisfaction": 1,
+    })
+    .toArray();
+
+  return customers;
+}
+
 export {
   getAllSales,
   getSaleById,
   getSaleByLocation,
   getFilterSale,
   masVendidos,
+  customer,
 };
