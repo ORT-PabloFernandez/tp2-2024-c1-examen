@@ -43,3 +43,10 @@ Si ya terminaste o son las 10:00 asegurate de seguir los siguientes pasos para l
 ## Listado de endpoint
 
 -GET /api/sales?pageSize=[pageSize]&page=[page]
+1. -GET SALE BY ID '...PORT/api/sales/:id'
+2. -GET SALES BY LOCATION '...PORT/api/sales/storeLocation/:location'
+3. -GET SALES BY LOCATION PAGINADO '...PORT/api/sales/storeLocation/:location?pageSize=[pageSize]&page=[page]'
+4. -GET SALES BY ITEMS '...PORT/api/sales/items?pageSize=[pageSize]&page=[page]'
+5. -GET SALES BY CUSTOMER '...PORT/api/sales/customers'
+
+ADVERTENCIA: LUEGO DE PROBAR EL GET SALE BY ID Y GET SALE BY LOCATION, DEBE COMENTAR LA FUNCION DE GET SALE BY ID POR QUE TRAE PROBLEMAS EL OBJECTID PARA EJECUTAR LAS OTRAS DOS FUNCIONES, SI COMENTA LA FUNCION , FUNCIONAN CORRECTAMENTE LAS FUNCIONES DE GET SALES BY ITEMS Y GET SALES BY CUSTOMER.
