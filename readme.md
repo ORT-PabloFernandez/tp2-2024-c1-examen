@@ -27,7 +27,7 @@ Luego de abrir el correo encuentras un mail de tu Líder Técnico con tu primera
 
 > ### SI TE DA EL TIEMPO DAME UN MANO TAMBIEN EN...
 >
-> 5. El equipo Marketing esta preparando una promoción via mail para los clientes mas satisfechos, y rebajas para los clientes mas insatisfechos. Para tal efecto, se quiere un endpoint que proporcione a los clientes ordenados por satisfacción (**satisfaction**)
+> 5. El equipo Marketing esta preparando una promoción via mail para los clientes mas   , y rebajas para los clientes mas insatisfechos. Para tal efecto, se quiere un endpoint que proporcione a los clientes ordenados por satisfacción (**satisfaction**)
 >
 > Desde ya muchas gracias por la colaboración! 😉 como te comente en la entrevista soy muy detallista en la prolijidad del codigo y la performance cada detalle cuenta, no me gusta mucho las cosas fuera del estandar de APIREST, sin embargo si no estas seguro, es mejor que lo resuelvas como puedas y me dejes notas en el readme.md del repo, para que yo pueda probar.
 
@@ -41,5 +41,15 @@ Si ya terminaste o son las 10:00 asegurate de seguir los siguientes pasos para l
 4. Realizar un pull request a mi repositorio
 
 ## Listado de endpoint
-
 -GET /api/sales?pageSize=[pageSize]&page=[page]
+
+
+1. GET          api/sales/:id                                                                             
+2. GET          api/sales/location/:location                                                            
+3. GET          api/sales/location/:location?purchaseMethod=[purchaseMethod]&couponUsed=[couponUsed]    
+4. GET          api/products/mostSelledProducts
+5. GET          api/customers/orderBySatisfaction
+
+En el punto 5 hay un cliente ("email": "nahnima@kec.pl") que en una compra tiene un satisfaccion de 150, por eso cuando calcula el promedio de
+satisfaccion ese queda primero con 76.5.
+
