@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
   res.json(await getAllSales(pageSize, page));
 });
 
-router.get("/sales/:id", async (req, res) => {
+router.get("/sale/:id", async (req, res) => {
   try {
     const salesId = req.params.id;
     const pageSize = req.query.pageSize ? parseInt(req.query.pageSize) : 0;
