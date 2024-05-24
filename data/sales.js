@@ -38,15 +38,10 @@ async function getSalesByLocation(location){
 //Funcion ejercicio3
 async function getPorFiltrado(location, metodo){
   const connectiondb = await getConnection();
-  const query = [];
-  if(location) query.storeLocation = location;
-  if(metodo) query.purchaseMethod = metodo;
-  query.couponUsed = 'true';
-
   const sales = await connectiondb
       .db(DATABASE)
       .collection(SALES)
-      .find(query)
+      .find(sale => sale.storeLocation.equals(location) && sale.purchaseMethod.equals(metodo) && sale.couponUsed === 'true')
       .toArray();
   return sales;
 }
@@ -56,16 +51,8 @@ async function getMasVendidos(){
   const connectiondb = await getConnection();
   const sales = await connectiondb
         .db(DATABASE)
-        .collection(SALES)
-        .aggregate([
-          {$unwind: '$items'},
-          {$group: {_id: '$items.Document.name', totalVendido: {$sum: '$items.Document.quantity' } } },
-          {$sort: { totalVendido: -1} },
-          {$limit: 10}
-        ]);
+        .collection(SALES);
   return sales;
 }
 
-//Funcion ejercicio5
-//async function get
 export { getAllSales, getById, getSalesByLocation, getMasVendidos, getPorFiltrado };
