@@ -55,3 +55,6 @@ puede recibir filtros de location, purchaseMethod y couponUsed por query params 
 
 -GET /api/sales/top10?pageSize=1000&page=1 
 devuelve el top 10 de productos mas vendidos (funciona con paginado)
+
+-GET /api/sales/satisfation
+devuelve un listado de los usuarios (email y satisfacion) ordenados de menos a mas (NO FUNCIONA CON PAGINADO)

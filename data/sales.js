@@ -86,3 +86,19 @@ export async function getTop10Productos(pageSize, page) {
 
   return top10prods;
 }
+
+export async function getUsersBySatisfaction() {
+  const sales = await getAllSales(0, 0);
+
+  const contUsers = {};
+
+  sales.forEach((sale) => {
+    contUsers[sale.customer.email] = sale.customer.satisfaction;
+  });
+
+  const usersBySatisfaction = Object.entries(contUsers)
+    .sort(([, a], [, b]) => a - b)
+    .map(([email, satisfaction]) => ({ email, satisfaction }));
+
+  return usersBySatisfaction;
+}

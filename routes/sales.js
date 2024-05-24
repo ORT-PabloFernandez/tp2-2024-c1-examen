@@ -5,6 +5,7 @@ import {
   getSaleByLocation,
   getSalesFiltered,
   getTop10Productos,
+  getUsersBySatisfaction,
 } from "../data/sales.js";
 
 const router = express.Router();
@@ -77,6 +78,17 @@ router.get("/top10", async (req, res) => {
   try {
     const p = await getTop10Productos(pageSize, page);
     res.json(p);
+  } catch (e) {
+    res.status(500).send({ message: e.message });
+  }
+});
+
+router.get("/satisfation", async (req, res) => {
+  console.log("consultando API: USUARIOS ORDENADOS POR SATISFACCION");
+
+  try {
+    const u = await getUsersBySatisfaction();
+    res.json(u);
   } catch (e) {
     res.status(500).send({ message: e.message });
   }
