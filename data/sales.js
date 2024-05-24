@@ -52,7 +52,7 @@ async function getMostSelledProducts(){
     .collection(SALES)
     .aggregate([
       { $unwind: "$items" },
-      { $group: {_id: "$items.name", precioPromedio: {$avg: "$items.price"}, cantidadVendidos: { $sum: "$items.quantity" }}},
+      { $group: {_id: "$items.name", cantidadVendidos: { $sum: "$items.quantity" }}},
       { $sort: { cantidadVendidos: -1 } },
       { $limit: 10 }
     ])
