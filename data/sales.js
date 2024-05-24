@@ -16,16 +16,8 @@ async function getAllSales(pageSize, page) {
   return sales;
 }
 
-function isValidObjectId(id) {
-  return ObjectId.isValid(id) && String(new ObjectId(id)) === id;
-}
-
 async function getSaleById(id) {
   try {
-    if (!isValidObjectId(id)) {
-      throw new Error("Invalid ID format");
-    }
-
     const connectiondb = await getConnection();
     const sale = await connectiondb
       .db(DATABASE)
@@ -102,20 +94,16 @@ async function getTopSales() {
 }
 
 async function getClientsBySatisfaction() {
-  try {
-    const connectiondb = await getConnection();
+  const connectiondb = await getConnection();
 
-    const sales = await connectiondb
-      .db(DATABASE)
-      .collection(SALES)
-      .find({ 'customer.satisfaction': { $exists: true } })
-      .sort({ 'customer.satisfaction': -1 })
-      .toArray();
+  const sales = await connectiondb
+    .db(DATABASE)
+    .collection(SALES)
+    .find({ 'customer.satisfaction': { $exists: true } })
+    .sort({ 'customer.satisfaction': -1 })
+    .toArray();
 
-    return sales;
-  } catch (error) {
-    throw new Error(error.message);
-  }
+  return sales;
 }
 
 export { getAllSales, getSaleById, getSalesByLocation, getSalesFilteredByLocPurMethodAndCoup, getTopSales, getClientsBySatisfaction };
