@@ -42,9 +42,9 @@ Si ya terminaste o son las 10:00 asegurate de seguir los siguientes pasos para l
 
 ## Listado de endpoint
 
--GET /api/sales?pageSize=[pageSize]&page=[page]
--GET /api/sales/sale/:id?pageSize=[pageSize]&page=[page] => Esta ruta retorna una venta dado un id.
--GET /api/sales//locations/:location?pageSize=[pageSize]&page=[page] => Esta ruta retorna las ventas en una locacion dada.
--GET /salesByLocationAndPurchaseMethod/:location/:purchaseMethod?couponUsed=true&pageSize=[pageSize]&page=[page] => Esta ruta retorna todas las ventas, correspondientes a una locacion especificada, que se hayan abonado con un metodo de pago especificado, y por medio de una querie, indicar si quieren las ventas que utilizaron un cupon, o no (true/false).
+>-GET /api/sales?pageSize=[pageSize]&page=[page]
+>-GET /api/sales/sale/:id?pageSize=[pageSize]&page=[page] => Esta ruta retorna una venta dado un id.
+>-GET /api/sales//locations/:location?pageSize=[pageSize]&page=[page] => Esta ruta retorna las ventas en una locacion dada.
+>-GET /salesByLocationAndPurchaseMethod/:location/:purchaseMethod?couponUsed=true&pageSize=[pageSize]&page=[page] => Esta ruta retorna todas las ventas, correspondientes a una locacion especificada, que se hayan abonado con un metodo de pago especificado, y por medio de una querie, indicar si quieren las ventas que utilizaron un cupon, o no (true/false).
 
 
