@@ -18,9 +18,9 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/location/:location", async (req, res) => {
-  const sale = await getSaleByLocation(req.params.location.toLowerCase());
+  const sales = await getSaleByLocation(req.params.location.toLowerCase());
 
-  res.json(sale);
+  res.json(sales);
 });
 
 router.get("/locMethCoup", async (req, res) => {
