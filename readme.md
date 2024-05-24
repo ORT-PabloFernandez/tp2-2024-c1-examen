@@ -43,3 +43,15 @@ Si ya terminaste o son las 10:00 asegurate de seguir los siguientes pasos para l
 ## Listado de endpoint
 
 -GET /api/sales?pageSize=[pageSize]&page=[page]
+
+-GET api/sales/:id
+recibe un ID por url y de encontrar una venta con el mismo ID la devuelve
+
+-GET /api/sales/location/Seattle?&pageSize=20&page=1 
+recibe un storeLocation por url y devuelve las ventas hechas en esa location (funciona con paginado)
+
+-GET /api/sales/filtered/prueba?location=Seattle&purchaseMethod=In store&couponUsed=true&pageSize=300&page=1
+puede recibir filtros de location, purchaseMethod y couponUsed por query params y devuelve las ventas que cumplan con los filtros (funciona con paginado)
+
+-GET /api/sales/top10?pageSize=1000&page=1 
+devuelve el top 10 de productos mas vendidos (funciona con paginado)
