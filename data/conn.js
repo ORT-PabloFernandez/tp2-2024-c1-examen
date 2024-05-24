@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { MongoClient } from "mongodb";
-const uri = process.env.MONGODB;
+const uri = "mongodb+srv://admin:tp2@cluster0.3bm3a.azure.mongodb.net/";
 
 const client = new MongoClient(uri);
 
