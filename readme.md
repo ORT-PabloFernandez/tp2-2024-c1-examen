@@ -43,3 +43,16 @@ Si ya terminaste o son las 10:00 asegurate de seguir los siguientes pasos para l
 ## Listado de endpoint
 
 -GET /api/sales?pageSize=[pageSize]&page=[page]
+
+## Sale por Id
+
+http://localhost:3000/api/sales/5bd761dcae323e45a93ccff8
+
+## Sales por storeLocation
+http://localhost:3000/api/sales/location/Denver
+
+## Sales localización , método de compra y cupon 
+http://localhost:3000/api/sales/filterSale/London/Online
+
+## Sales más Vendidas
+http://localhost:3000/api/sales/masVendidos
