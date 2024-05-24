@@ -43,3 +43,19 @@ Si ya terminaste o son las 10:00 asegurate de seguir los siguientes pasos para l
 ## Listado de endpoint
 
 -GET /api/sales?pageSize=[pageSize]&page=[page]
+-GET /api/sales/5bd761dcae323e45a93cd0f3   Recibe ID  reemplazar "5bd761dcae323e45a93cd0f3" el que esta puesto por cualquier otro
+-GET /api/sales/location/Denver Recibe un location Reemplazar "Denver" por cualquier otro
+-POST /api/sales/locationPurchaseCupon   Recibe un body (JSON) reemplazar los values por cualquier otro, cuponUsed true o false
+
+    {
+  "storeLocation": "Denver",
+  "purchaseMethod": "In store",
+  "couponUsed": false,
+  "pageSize": 10,
+  "page": 0
+}
+
+-GET /api/sales/topProducts Trae el top 10 productos mas vendidos 
+
+
+-GET /api/sales/satisfaction Trae la satisfaccion del cliente ordenada de mayor a menor
