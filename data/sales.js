@@ -50,7 +50,7 @@ async function getSalesfiltered(cupon, method, location, pageSize, page) {
     query.purchaseMethod = method;
   }
   if (cupon) {
-    if ((cupon === "true")) {
+    if (cupon === "true") {
       query.couponUsed = true;
     } else {
       query.couponUsed = false;
@@ -68,4 +68,37 @@ async function getSalesfiltered(cupon, method, location, pageSize, page) {
   return sales;
 }
 
-export { getAllSales, getSalebyId, getSalesByLocation, getSalesfiltered };
+async function getTopTen() {
+  const connectiondb = await getConnection();
+  const projection = { "items.name": 1, "items.quantity": 1 };
+  const sales = await connectiondb
+    .db(DATABASE)
+    .collection(SALES)
+    .find({})
+    .project(projection)
+    .toArray();
+
+
+  const listadoItems = {};
+  sales.forEach((sale) => {
+    sale.items.forEach((item) => {
+      if(!listadoItems[item.name]){
+        listadoItems[item.name] = 0;
+      }
+      listadoItems[item.name] += item.quantity;
+      //console.log(item);
+    });
+  });
+
+  //Me faltó ordenar, o buscar los 10 valores más altos
+
+  return listadoItems;
+}
+
+export {
+  getAllSales,
+  getSalebyId,
+  getSalesByLocation,
+  getSalesfiltered,
+  getTopTen,
+};

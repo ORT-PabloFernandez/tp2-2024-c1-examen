@@ -1,5 +1,11 @@
 import express from "express";
-import { getAllSales, getSalebyId, getSalesByLocation, getSalesfiltered } from "../data/sales.js";
+import {
+  getAllSales,
+  getSalebyId,
+  getSalesByLocation,
+  getSalesfiltered,
+  getTopTen,
+} from "../data/sales.js";
 
 const router = express.Router();
 
@@ -48,11 +54,20 @@ router.get("/filteredby", async (req, res) => {
   const location = req.query.location;
   const method = req.query.method;
   const cupon = req.query.cupon;
-  
+
   //console.log(typeof(cupon));
 
   try {
     res.json(await getSalesfiltered(cupon, method, location, pageSize, page));
+  } catch (error) {
+    res.status(500).json({ message: "Internal Server Error." });
+  }
+});
+
+// endpoint que retorne los 10 productos mas vendidos
+router.get("/topten", async (req, res) => {
+  try {
+    res.json(await getTopTen());
   } catch (error) {
     res.status(500).json({ message: "Internal Server Error." });
   }

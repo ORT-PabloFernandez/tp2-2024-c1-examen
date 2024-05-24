@@ -1,3 +1,15 @@
+
+http://127.0.0.1:3000/api/sales/topten
+
+http://127.0.0.1:3000/api/sales/filteredby?pageSize=50&location=London&method=Online&cupon=false
+
+http://127.0.0.1:3000/api/sales/location/London
+
+http://127.0.0.1:3000/api/sales/id/5bd761dcae323e45a93cd041
+
+http://127.0.0.1:3000/api/sales?pageSize=50&page=0
+
+
 # TALLER DE PROGRAMACION 2
 
 ## Instrucciones de resolución de examen
