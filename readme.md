@@ -20,14 +20,14 @@ Luego de abrir el correo encuentras un mail de tu Líder Técnico con tu primera
 
 > ### TUS TAREAS SON LAS SIGUIENTES POR ORDEN DE PRIORIDAD
 >
-> 1. Necesitamos un endpoint que nos devuelva una venta (**sales**) particular por \_id
-> 2. Necesitamos un endpoint que nos permita filtrar las ventas por localización (**storeLocation**). Por emeplo todas las ventas de las tiendas en Seatle
-> 3. El equipo de frontend esta preparando una pagina que permita filtrar tanto por localización como por el medio que se hizo la venta (**purchaseMethod**) y ademas si se uso un cupon (**couponUsed**)
-> 4. Recientemente nos llegó un requerimiento para promocionar en la pagina los productos mas vendidos. Por lo cual se requiere un endpoint que retorne los 10 productos mas vendidos
+[ x ] > 1. Necesitamos un endpoint que nos devuelva una venta (**sales**) particular por \_id
+[ x ] > 2. Necesitamos un endpoint que nos permita filtrar las ventas por localización (**storeLocation**). Por emeplo todas las ventas de las tiendas en Seatle
+[ x ] > 3. El equipo de frontend esta preparando una pagina que permita filtrar tanto por localización como por el medio que se hizo la venta (**purchaseMethod**) y ademas si se uso un cupon (**couponUsed**)
+[ x ] > 4. Recientemente nos llegó un requerimiento para promocionar en la pagina los productos mas vendidos. Por lo cual se requiere un endpoint que retorne los 10 productos mas vendidos
 
 > ### SI TE DA EL TIEMPO DAME UN MANO TAMBIEN EN...
 >
-> 5. El equipo Marketing esta preparando una promoción via mail para los clientes mas satisfechos, y rebajas para los clientes mas insatisfechos. Para tal efecto, se quiere un endpoint que proporcione a los clientes ordenados por satisfacción (**satisfaction**)
+[ x ] > 5. El equipo Marketing esta preparando una promoción via mail para los clientes mas satisfechos, y rebajas para los clientes mas insatisfechos. Para tal efecto, se quiere un endpoint que proporcione a los clientes ordenados por satisfacción (**satisfaction**)
 >
 > Desde ya muchas gracias por la colaboración! 😉 como te comente en la entrevista soy muy detallista en la prolijidad del codigo y la performance cada detalle cuenta, no me gusta mucho las cosas fuera del estandar de APIREST, sin embargo si no estas seguro, es mejor que lo resuelvas como puedas y me dejes notas en el readme.md del repo, para que yo pueda probar.
 
