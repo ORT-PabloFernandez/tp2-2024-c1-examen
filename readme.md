@@ -43,3 +43,34 @@ Si ya terminaste o son las 10:00 asegurate de seguir los siguientes pasos para l
 ## Listado de endpoint
 
 -GET /api/sales?pageSize=[pageSize]&page=[page]
+
+
+-getSale (obtener venta por id): 
+-GET /api/sales/{id}
+-GET /api/sales/5bd761dcae323e45a93cd061
+
+
+
+-getSaleByLocation (venta filtrada por ubicacion):
+-GET /api/sales/location/{storeLocation}
+-GET /api/sales/location/Denver?
+
+
+-getFilterSales (ventas filtradas por ubicacion, metodo de pago y si uso cupon):
+-GET api/sales/filter?location={location}&purchaseMethod={purchaseMethod}&couponUsed={true|false}
+-GET api/sales/filter?location=Denver&purchaseMethod=Online&couponUsed=true
+
+
+-getTenSales (las 10 primeras ventas mas vendidas):
+-GET /api/sales/top-ten
+
+-getCustomersBySatisfaction (podes elegir si ordernarlos de forma asc o desc):
+-GET /api/sales/customers-satisfaction?order=asc
+
+
+
+
+
+
+
+
