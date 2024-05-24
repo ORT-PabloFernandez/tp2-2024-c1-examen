@@ -43,3 +43,8 @@ Si ya terminaste o son las 10:00 asegurate de seguir los siguientes pasos para l
 ## Listado de endpoint
 
 -GET /api/sales?pageSize=[pageSize]&page=[page]
+-GET /api/sales/:id
+-GET /api/sales/location/:location
+-GET /api/sales/complex/filter?storeLocation=[storeLocation]&purchaseMethod=[purchaseMethod]&couponUsed=[couponUsed] 
+-GET /api/sales/top/products
+-GET api/sales/client/satisfaction/:sort?pageSize=[pageSize]&page=[page] In sort can be 'asc' or 'desc'
