@@ -41,5 +41,32 @@ Si ya terminaste o son las 10:00 asegurate de seguir los siguientes pasos para l
 4. Realizar un pull request a mi repositorio
 
 ## Listado de endpoint
+- GET /api/sales
+  - Descripción: Obtiene todas las ventas.
+  - Parámetros: `pageSize` (opcional, número de elementos por página), `page` (opcional, número de página)
+  - Ejemplo: `/api/sales?pageSize=10&page=1`
 
--GET /api/sales?pageSize=[pageSize]&page=[page]
+- GET /api/sales/:id
+  - Descripción: Obtiene una venta por su ID.
+  - Parámetros: `id` (obligatorio, el ID de la venta)
+  - Ejemplo: `/api/sales/60d5ec9af682fbd39a8924`
+
+- GET /api/sales/storeLocation/:storeLocation
+  - Descripción: Obtiene las ventas por ubicación de la tienda.
+  - Parámetros: `storeLocation` (obligatorio, la ubicación de la tienda), `pageSize` (opcional, número de elementos por página), `page` (opcional, número de página)
+  - Ejemplo: `/api/sales/storeLocation/New%20York?pageSize=10&page=1`
+
+- GET /api/sales/storeLocationAndPurchaseMethod
+  - Descripción: Obtiene las ventas por ubicación de la tienda y método de compra.
+  - Parámetros: `storeLocation` (obligatorio, la ubicación de la tienda), `purchaseMethod` (obligatorio, el método de compra), `couponUsed` (opcional, si se usó un cupón), `pageSize` (opcional, número de elementos por página), `page` (opcional, número de página)
+  - Ejemplo: `/api/sales/storeLocationAndPurchaseMethod?storeLocation=New%20York&purchaseMethod=Online&couponUsed=true&pageSize=10&page=1`
+
+- GET /api/sales/TopTenSoldItems
+  - Descripción: Obtiene los diez artículos más vendidos.
+  - Parámetros: Ninguno
+  - Ejemplo: `/api/sales/TopTenSoldItems`
+
+- GET /api/sales/CustomersBySatisfaction
+  - Descripción: Obtiene todos los clientes por satisfacción.
+  - Parámetros: Ninguno
+  - Ejemplo: `/api/sales/CustomersBySatisfaction`
