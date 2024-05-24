@@ -41,5 +41,9 @@ Si ya terminaste o son las 10:00 asegurate de seguir los siguientes pasos para l
 4. Realizar un pull request a mi repositorio
 
 ## Listado de endpoint
+http://localhost:3000/api/sales/byId/5bd761dcae323e45a93cd149
+http://localhost:3000/api/sales/location/New York
+http://localhost:3000/api/sales/getSaleByLocationAndPurchaseMethodAndCouponUsed
+http://localhost:3000/api/sales/getBestSales
 
 -GET /api/sales?pageSize=[pageSize]&page=[page]
